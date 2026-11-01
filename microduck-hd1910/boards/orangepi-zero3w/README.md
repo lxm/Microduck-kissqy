@@ -34,7 +34,7 @@ This experimental BSP targets the Allwinner A733 Orange Pi Zero 3W. `make image`
 
 [`Orange Pi Zero 3W image`](../../../.github/workflows/orangepi-image.yml) 工作流在 `orangepi` 分支相关文件推送时自动运行。打开仓库 **Actions → Orange Pi Zero 3W image → 成功的运行记录 → Artifacts**，下载 `orangepi-zero3w-img-<运行编号>-<尝试编号>`。解压 artifact ZIP 后得到完整 `.img.xz`、`SHA256SUMS` 和构建记录；校验后可直接刷卡。下载保留 30 天，需要时可在已有运行页面选择 **Re-run all jobs** 重新构建。
 
-工作流校验并复用 [`audio/prebuilt/`](audio/prebuilt/) 中的既有音频模块及索引，使用仓库原 control.43 发布包，从现有源码构建 ToF，然后调用 `make image`。没有音频编译、私人 Wi-Fi、登录凭据或本机标定注入。只生成下载产物，不发布 Release 或创建 PR。
+工作流校验并复用 [`audio/prebuilt/`](audio/prebuilt/) 中的既有音频模块，使用仓库原 control.43 发布包，从现有源码构建 ToF，然后调用 `make image REINDEX_MODULES=1`。Linux runner 对固定底包的完整模块树重新运行离线 `depmod`，不会重编音频。没有私人 Wi-Fi、登录凭据或本机标定注入。只生成下载产物，不发布 Release 或创建 PR。
 
 保留了 `workflow_dispatch`；GitHub 的 **Run workflow** 按钮要求同名工作流存在于默认分支。本次仅修改 `orangepi`，不为显示该按钮改动 `main`；当前可通过分支推送或 **Re-run all jobs** 启动。
 
@@ -50,6 +50,8 @@ make image MODULES=/path/to/verified-audio-inputs TOFD=/path/to/tofd
 `make fetch` 按 `profile.json` 的固定 URL 下载、校验和解压底包及 boot0。已有文件可通过 `BASE_IMAGE=/path/to/base.img BOOT0=/path/to/boot0.fex` 传入 `make image`，省去重复下载。
 
 `MODULES` 目录必须包含 `modules/` 下的三个 `.ko`、`indexes/` 下对应基础内核的 depmod 索引，以及 `MODULES.json`（内核、原始模块树、补丁后源码和所有产物的 SHA-256）。只有三个裸 `.ko` 可用于上面的单板安装器，但不足以离线生成镜像索引。此次镜像沿用已验证模块及索引，不执行音频编译。
+
+Linux 构建推荐安装 `kmod` 并传入 `REINDEX_MODULES=1`，直接对固定底包及校验过的 `.ko` 生成索引，不依赖输入包中的旧索引。底包存在仅大小写不同的模块名（例如 `xt_DSCP.ko` / `xt_dscp.ko`），macOS 默认文件系统导出的模块树不适合作为 Linux 索引基线。新的 `MODULES.json` 记录实际使用的模块树及索引摘要。
 
 默认输出：
 

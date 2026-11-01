@@ -35,7 +35,7 @@ jobs:
       - name: Install image and ToF build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y device-tree-compiler e2fsprogs xz-utils make python3-venv build-essential pkg-config libudev-dev
+          sudo apt-get install -y device-tree-compiler e2fsprogs kmod xz-utils make python3-venv build-essential pkg-config libudev-dev
           rustup toolchain install 1.99.0 --profile minimal --target aarch64-unknown-linux-gnu
           python3 -m venv .build/tools
           .build/tools/bin/pip install cargo-zigbuild==0.23.4 ziglang==0.15.1
@@ -67,7 +67,7 @@ jobs:
         run: make tofd
 
       - name: Build and verify complete IMG/XZ
-        run: make image
+        run: make image REINDEX_MODULES=1
 
       - name: Prepare download
         run: |
@@ -75,7 +75,7 @@ jobs:
           cp .build/image/release/*.img.xz .build/download/
           cp .build/image/BUILD.json .build/image/validation/image-build.json .build/download/
           cp .build/tofd-target/aarch64-unknown-linux-gnu/release/TOFD-BUILD.json .build/download/
-          cp .build/audio/MODULES.json .build/download/
+          cp .build/image/MODULES.json .build/download/
           git rev-parse HEAD > .build/download/SOURCE-COMMIT.txt
           (cd .build/download && sha256sum -- *.img.xz > SHA256SUMS)
 

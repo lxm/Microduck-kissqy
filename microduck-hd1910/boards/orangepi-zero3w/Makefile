@@ -34,4 +34,5 @@ image:
 	$(PYTHON) build_image.py --base-image "$(BASE_IMAGE)" --boot0 "$(BOOT0)" \
 	  --modules "$(MODULES)" --tofd "$(TOFD)" --output "$(OUTPUT)" \
 	  $(if $(APPLICATION),--application "$(APPLICATION)" --application-sha256 "$(APPLICATION_SHA256)") \
-	  $(if $(WIFI_NETPLAN),--wifi-netplan "$(WIFI_NETPLAN)")
+	  $(if $(WIFI_NETPLAN),--wifi-netplan "$(WIFI_NETPLAN)") \
+	  $(if $(filter 1,$(REINDEX_MODULES)),--reindex-modules)
