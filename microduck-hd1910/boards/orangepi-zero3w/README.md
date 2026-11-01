@@ -30,6 +30,16 @@ This experimental BSP targets the Allwinner A733 Orange Pi Zero 3W. `make image`
 
 ## 构建完整刷卡镜像
 
+### GitHub Actions 构建和下载
+
+[`Orange Pi Zero 3W image`](../../../.github/workflows/orangepi-image.yml) 工作流在 `orangepi` 分支相关文件推送时自动运行。打开仓库 **Actions → Orange Pi Zero 3W image → 成功的运行记录 → Artifacts**，下载 `orangepi-zero3w-img-<运行编号>-<尝试编号>`。解压 artifact ZIP 后得到完整 `.img.xz`、`SHA256SUMS` 和构建记录；校验后可直接刷卡。下载保留 30 天，需要时可在已有运行页面选择 **Re-run all jobs** 重新构建。
+
+工作流校验并复用 [`audio/prebuilt/`](audio/prebuilt/) 中的既有音频模块及索引，使用仓库原 control.43 发布包，从现有源码构建 ToF，然后调用 `make image`。没有音频编译、私人 Wi-Fi、登录凭据或本机标定注入。只生成下载产物，不发布 Release 或创建 PR。
+
+保留了 `workflow_dispatch`；GitHub 的 **Run workflow** 按钮要求同名工作流存在于默认分支。本次仅修改 `orangepi`，不为显示该按钮改动 `main`；当前可通过分支推送或 **Re-run all jobs** 启动。
+
+### 本地构建
+
 镜像基于已适配 A733 的 Armbian，不重建完整内核或 U-Boot。工作目录均为本目录；推荐 Linux，依赖 `python3 make device-tree-compiler e2fsprogs xz-utils`。macOS 可使用 Homebrew 的相应工具，并把 `e2fsprogs/sbin` 加入 PATH。准备至少 12 GB 空间。构建只处理普通文件，不需要 root、挂载或访问块设备。
 
 ```sh
@@ -88,7 +98,7 @@ snd-soc-microduck-aic3104.ko
 sudo python3 install.py /lib/modules/6.6.98-vendor-sun60iw2/updates/microduck-audio
 ```
 
-模块二进制不纳入 Git；已有模块可直接安装，干净构建环境可通过上述独立音频构建目标生成。此次沿用既有模块，不重新编译音频。
+已有模块及来源记录以校验过的压缩包保存在 `audio/prebuilt/`，可直接解包使用；需要重编时走上述独立音频构建目标。此次沿用既有模块，不重新编译音频。
 
 安装器仅写入 `/boot/overlay-user`、`/boot/armbianEnv.txt`、模块目录、模块加载配置、I²C udev 规则及相关 serial-getty mask。保留 root UUID 和其它启动参数，删除 Linux 串口 console/earlycon 参数。不会修改账号、Wi-Fi、标定或应用配置，也不会当场加载驱动、停止运动服务或重启。
 
