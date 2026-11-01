@@ -23,6 +23,8 @@ V167 中控配套已编译的 **control.43** 固件。更新：**修复鸭身抖
 
 ## 下载与使用
 
+Orange Pi Zero 3W（Allwinner A733）的实验性支持见[底层适配说明](boards/orangepi-zero3w/README.md)，需使用该板 Armbian 基线。
+
 1. [下载系统镜像 R1](https://github.com/kissqy/Microduck-kissqy/releases/download/public-image-r1/microduck-zero3w-0.15.1-R1.img.xz)，用 [Armbian Imager](https://imager.armbian.com/) 刷入 TF 卡。
 2. 首次开机连接 `Microduck-kissqy` 热点（密码 `12345678`），设置家庭 Wi-Fi 和新的系统登录密码。未自动弹出页面时访问 `http://10.42.0.1:8088`。
 3. [下载机器人中控 V167](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/release-assets/Microduck-Console-R17-V167.zip)，完整解压后运行 `start.cmd`；macOS/Linux 运行 `bash start.command`。页面地址为 `http://127.0.0.1:8090`。

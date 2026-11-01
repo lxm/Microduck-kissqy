@@ -23,6 +23,8 @@ V167 includes compiled **control.43** firmware. Update: **Fixed body jitter.** C
 
 ## Download and use
 
+For experimental Orange Pi Zero 3W (Allwinner A733) support, see the [BSP notes](boards/orangepi-zero3w/README.md); use the board-specific Armbian baseline.
+
 1. [Download Image R1](https://github.com/kissqy/Microduck-kissqy/releases/download/public-image-r1/microduck-zero3w-0.15.1-R1.img.xz) and flash it to a microSD card with [Armbian Imager](https://imager.armbian.com/).
 2. On first boot, join `Microduck-kissqy` (password `12345678`), then configure home Wi-Fi and a new system login password. If the page does not open automatically, visit `http://10.42.0.1:8088`.
 3. [Download Robot Console V167](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/release-assets/Microduck-Console-R17-V167.zip), extract everything, and run `start.cmd`; on macOS / Linux run `bash start.command`. The local page is `http://127.0.0.1:8090`.
