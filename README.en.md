@@ -31,6 +31,8 @@ The three build stages and optional advanced guide are in Chinese. [English buil
 
 <table>
 <tr>
+  <td width="10%"><video src="https://github.com/user-attachments/assets/008bb58b-7bbd-4de7-9687-9b6ef2d42ed7" controls></video></td>
+  <td width="10%"><video src="https://github.com/user-attachments/assets/0a3edb38-0c25-429a-b552-94ea04881bf3" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/0ec5b46b-1ec0-483a-a95d-3b3f307e155f" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/d09a6bfe-7a28-4266-ba90-de2b331472ad" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/a604c0e0-af01-413f-ab00-99ccd26db8d5" controls></video></td>
@@ -41,6 +43,20 @@ The three build stages and optional advanced guide are in Chinese. [English buil
 </table>
 
 [🎬 Watch all real-robot videos →](https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#more-videos)
+
+<p><b>📷 Out with Microduck</b> · <a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-gallery">7 photos · Click to browse the gallery →</a></p>
+
+<table>
+<tr>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-04"><img width="90" alt="Microduck outdoor photo 4" src="docs/assets/showcase/outdoor-04-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-07"><img width="90" alt="Microduck outdoor photo 7" src="docs/assets/showcase/outdoor-07-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-03"><img width="90" alt="Microduck outdoor photo 3" src="docs/assets/showcase/outdoor-03-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-05"><img width="90" alt="Microduck outdoor photo 5" src="docs/assets/showcase/outdoor-05-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-02"><img width="90" alt="Microduck outdoor photo 2" src="docs/assets/showcase/outdoor-02-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-06"><img width="90" alt="Microduck outdoor photo 6" src="docs/assets/showcase/outdoor-06-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-01"><img width="90" alt="Microduck outdoor photo 1" src="docs/assets/showcase/outdoor-01-thumb.webp" /></a></td>
+</tr>
+</table>
 
 <sub>These clips show the real robot. The console demos below use simulated data; they cannot connect to a robot or run training.</sub>
 
@@ -86,9 +102,10 @@ Community improvements and the author's real-robot modifications are collected i
 
 ## 🔧 DIY HAT and IMU
 
-The author designs and lays out the HAT and independent torso IMU, with extended real-robot use and iterative validation. Assembled boards are **SMT-manufactured by JLCPCB**, integrating the functions needed for replication to reduce separate sourcing and DIY fabrication costs. PCB projects, parts lists and build records are provided for DIY assembly or the author's assembled boards.
+Designed and laid out by the author, refined through extended real-robot use and **SMT assembled by JLCPCB**.
 
-**The assembled IMU comes with FT6 firmware pre-flashed; no additional flashing is needed on arrival. Calibrate it for your robot after installation.** The author's separately licensable original design material is for personal noncommercial replication; commercial reproduction, manufacture, sale or integration requires prior written permission. [Board design license](hardware/LICENSE)
+
+**The assembled IMU comes preflashed with FT6; no initial flashing is needed.** The author's separately licensable original design material is for personal noncommercial replication; commercial reproduction, manufacture, sale or integration requires prior written permission. [Board design license](hardware/LICENSE)
 
 [Hardware projects and build guides](hardware/README.en.md) · [IMU build video](https://www.bilibili.com/video/BV1qapz6PERs/) · [Buy assembled HAT / IMU / HUB boards](https://item.taobao.com/item.htm?id=1095121548583)
 

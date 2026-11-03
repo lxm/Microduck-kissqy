@@ -44,6 +44,20 @@
 
 [🎬 查看全部实机视频 →](https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#more-videos)
 
+<p><b>📷 小鸭出游</b> · <a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-gallery">7 张照片 · 点击进入滑动相册 →</a></p>
+
+<table>
+<tr>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-04"><img width="90" alt="侧前方站立的白橙色 Microduck，背景是橙黄色大鸭子" src="docs/assets/showcase/outdoor-04-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-07"><img width="90" alt="白橙色 Microduck 在蓝天下的乐园广场正面站立" src="docs/assets/showcase/outdoor-07-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-03"><img width="90" alt="阳光下的白橙色 Microduck，完整展示头部、身体与双腿" src="docs/assets/showcase/outdoor-03-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-05"><img width="90" alt="白橙色 Microduck 的侧面，展示躯干和腿部结构" src="docs/assets/showcase/outdoor-05-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-02"><img width="90" alt="绿植和彩色建筑前站立的白橙色 Microduck" src="docs/assets/showcase/outdoor-02-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-06"><img width="90" alt="白橙色 Microduck 坐在木质长椅上，双脚朝向镜头" src="docs/assets/showcase/outdoor-06-thumb.webp" /></a></td>
+<td><a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html#photo-01"><img width="90" alt="绿植和彩色建筑前坐着的白橙色 Microduck 正面合影" src="docs/assets/showcase/outdoor-01-thumb.webp" /></a></td>
+</tr>
+</table>
+
 <sub>以上为实机视频；下方中控在线演示使用模拟数据，不连接实机或真正训练。</sub>
 
 
@@ -88,9 +102,10 @@
 
 ## 🔧 HAT 与 IMU 自制记录
 
-HAT 与独立躯干 IMU 由作者自行设计绘制，经长期真机使用与迭代验证；成品板由**嘉立创 SMT 贴片生产**，整合复刻所需功能，降低分散采购与自行制作的成本。提供电路板工程、材料清单与制作记录，可自己制作或选择作者同款成品板。
+作者自行设计绘制，经长期真机使用与迭代验证，由**嘉立创 SMT 贴片生产**。
 
-**成品 IMU 已预烧录 FT6，到手无需另行烧录；安装后仍需完成本机标定。** 作者享有权利的原创设计与工程资料限个人非商业复刻，商业复制生产、销售或集成须事先取得书面授权。[板卡设计许可](hardware/LICENSE)
+
+**成品 IMU 已预烧录 FT6，到手无需另行烧录。** 作者享有权利的原创设计与工程资料限个人非商业复刻，商业复制生产、销售或集成须事先取得书面授权。[板卡设计许可](hardware/LICENSE)
 
 [硬件工程与制作说明](hardware/README.md) · [IMU 手工制作视频](https://www.bilibili.com/video/BV1qapz6PERs/) · [购买 HAT／IMU／HUB 成品板](https://item.taobao.com/item.htm?id=1095121548583)
 
